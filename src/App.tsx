@@ -4,6 +4,7 @@ import { FilterChips } from "./components/FilterChips";
 import { HexBand } from "./components/HexBand";
 import { Footer } from "./components/Footer";
 import { Lightbox } from "./components/Lightbox";
+import { QuoteForm } from "./components/QuoteForm";
 import { SectionHead } from "./components/SectionHead";
 import { Services } from "./components/Services";
 import { Sidebar } from "./components/Sidebar";
@@ -39,7 +40,7 @@ export default function App() {
             <About />
           </section>
           <section id="quote" aria-labelledby="quote-title">
-            <SectionHead id="quote" title="Get a quote" />
+            <QuoteForm />
           </section>
           <Footer />
         </main>

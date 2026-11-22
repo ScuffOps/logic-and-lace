@@ -164,3 +164,13 @@ button.tile{font:inherit; padding:0; text-align:left; cursor:pointer; width:100%
 .about .facts dt{color:var(--muted)} .about .facts dd{margin:0; font-family:var(--font-m); font-weight:400; font-size:13px}
 .btn-soon{opacity:.6; cursor:default}
 .svc .price{display:block}
+.form fieldset{border:0; padding:0; margin:0; min-width:0}
+.form legend{font:600 14px/1 var(--font-d); color:var(--ivory); padding:0; margin-bottom:6px}
+.chip-check{position:relative; cursor:pointer; user-select:none}
+.chip-check input{position:absolute; opacity:0; width:1px; height:1px; margin:0}
+.chip-check:has(input:focus-visible){outline:3px solid var(--peri); outline-offset:2px}
+.chip-check[data-on]{background:var(--peri); color:var(--ink); border-color:var(--deep)}
+.field .err,.form fieldset .err{display:block; margin:0; font-size:13px; color:#ffb4a8}
+.field.invalid .chip-check,.field.invalid textarea{border-color:#ffb4a8}
+.hp{position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden}
+.form .ok{display:none} .form .ok.show{display:block}
