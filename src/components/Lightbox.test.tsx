@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../App";
+import { site } from "../data/site";
 
 test("clicking a tile opens a dialog and Escape closes it, returning focus", async () => {
   render(<App />);
@@ -26,7 +27,7 @@ test("filter state survives opening and closing the lightbox", async () => {
   await userEvent.click(screen.getByRole("button", { name: /^Twitch panels,/ }));
   await userEvent.keyboard("{Escape}");
   expect(screen.getByRole("button", { name: "Panels" })).toHaveAttribute("aria-pressed", "true");
-  expect(screen.getAllByRole("button", { name: /, Panels$/ })).toHaveLength(1);
+  expect(screen.getAllByRole("button", { name: /, Panels$/ })).toHaveLength(site.work.filter((w) => w.category === "panels").length);
 });
 
 test("focus returns to the trigger even when the click did not focus it", async () => {

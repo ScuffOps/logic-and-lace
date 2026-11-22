@@ -1,13 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../App";
+import { site } from "../data/site";
 
 const tilePattern = /, (Overlays|Alerts|Widgets & chatboxes|Panels|Websites|Art)$/;
 
-test("All chip is pressed by default and shows seven tiles", () => {
+test("All chip is pressed by default and shows every tile", () => {
   render(<App />);
   expect(screen.getByRole("button", { name: "All" })).toHaveAttribute("aria-pressed", "true");
-  expect(screen.getAllByRole("button", { name: tilePattern })).toHaveLength(7);
+  expect(screen.getAllByRole("button", { name: tilePattern })).toHaveLength(site.work.length);
 });
 
 test("choosing Websites shows only website tiles and moves aria-pressed", async () => {
