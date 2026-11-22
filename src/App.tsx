@@ -1,14 +1,19 @@
+import { useCallback, useState } from "react";
 import { FilterChips } from "./components/FilterChips";
 import { Footer } from "./components/Footer";
+import { Lightbox } from "./components/Lightbox";
 import { SectionHead } from "./components/SectionHead";
 import { Sidebar } from "./components/Sidebar";
 import { Topbar } from "./components/Topbar";
 import { WorkGrid } from "./components/WorkGrid";
 import { site } from "./data/site";
+import type { WorkItem } from "./data/types";
 import { useFilter } from "./hooks/useFilter";
 
 export default function App() {
   const filter = useFilter(site.work);
+  const [open, setOpen] = useState<{ item: WorkItem; trigger: HTMLElement } | null>(null);
+  const close = useCallback(() => setOpen(null), []);
   return (
     <>
       <Topbar />
@@ -18,7 +23,7 @@ export default function App() {
           <section id="work" aria-labelledby="work-title">
             <SectionHead id="work" title="Work" />
             <FilterChips active={filter.active} onChange={filter.setActive} />
-            <WorkGrid items={filter.visible} onOpen={() => {}} />
+            <WorkGrid items={filter.visible} onOpen={(item, trigger) => setOpen({ item, trigger })} />
           </section>
           <section id="services" aria-labelledby="services-title">
             <SectionHead id="services" title="Services" />
@@ -35,6 +40,7 @@ export default function App() {
           <Footer />
         </main>
       </div>
+      <Lightbox item={open?.item ?? null} onClose={close} />
     </>
   );
 }
