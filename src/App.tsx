@@ -1,8 +1,11 @@
 import { useCallback, useState } from "react";
+import { About } from "./components/About";
 import { FilterChips } from "./components/FilterChips";
+import { HexBand } from "./components/HexBand";
 import { Footer } from "./components/Footer";
 import { Lightbox } from "./components/Lightbox";
 import { SectionHead } from "./components/SectionHead";
+import { Services } from "./components/Services";
 import { Sidebar } from "./components/Sidebar";
 import { Topbar } from "./components/Topbar";
 import { WorkGrid } from "./components/WorkGrid";
@@ -26,13 +29,14 @@ export default function App() {
             <WorkGrid items={filter.visible} onOpen={(item, trigger) => setOpen({ item, trigger })} />
           </section>
           <section id="services" aria-labelledby="services-title">
-            <SectionHead id="services" title="Services" />
+            <Services />
           </section>
           <section id="devtools" aria-labelledby="devtools-title">
             <h2 id="devtools-title" className="sr-only">Dev tools</h2>
+            <HexBand />
           </section>
           <section id="about" aria-labelledby="about-title">
-            <SectionHead id="about" title="About" />
+            <About />
           </section>
           <section id="quote" aria-labelledby="quote-title">
             <SectionHead id="quote" title="Get a quote" />

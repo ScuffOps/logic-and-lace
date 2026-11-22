@@ -160,3 +160,7 @@ button.tile{font:inherit; padding:0; text-align:left; cursor:pointer; width:100%
 .lightbox-body .specs{font-family:var(--font-m); font-size:13px; color:var(--ivory)}
 .lightbox-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
 .lightbox-close{position:absolute; top:12px; right:12px; width:44px; height:44px; border-radius:999px; border:2.5px solid var(--deep); background:var(--lilac); color:var(--ink); font:700 22px/1 var(--font-d); cursor:pointer; box-shadow:var(--shadow)}
+.about .facts{margin:0}
+.about .facts dt{color:var(--muted)} .about .facts dd{margin:0; font-family:var(--font-m); font-weight:400; font-size:13px}
+.btn-soon{opacity:.6; cursor:default}
+.svc .price{display:block}
