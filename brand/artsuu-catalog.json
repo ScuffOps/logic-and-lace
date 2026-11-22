@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "updated": "2026-11-21T22:20:00Z",
+  "types": [
+    { "id": "background", "label": "Background" },
+    { "id": "stream-overlay", "label": "Stream Overlay" },
+    { "id": "overlays", "label": "Overlays" },
+    { "id": "widget", "label": "Widget" },
+    { "id": "website", "label": "Website" },
+    { "id": "alerts", "label": "Alerts" },
+    { "id": "panels", "label": "Panels" },
+    { "id": "workflow", "label": "Workflow" },
+    { "id": "logo-branding", "label": "Logo / branding" },
+    { "id": "other", "label": "Other" }
+  ],
+  "statuses": [
+    { "id": "completed", "label": "Completed", "rank": 0 },
+    { "id": "in-review", "label": "In review", "rank": 1 },
+    { "id": "in-progress", "label": "In progress", "rank": 2 },
+    { "id": "planned", "label": "Planned", "rank": 3 }
+  ],
+  "items": [
+    {
+      "id": "neon-shoreline-obs-theme",
+      "title": "Neon Shoreline OBS Theme",
+      "type": "stream-overlay",
+      "status": "in-review",
+      "listing": "for-sale",
+      "price": null,
+      "collection": "Neon Shoreline",
+      "thread": "Build the rest of the stream kit",
+      "updated": "2026-11-18T22:31:39Z",
+      "summary": "Full brand-neutral stream pack: 4 scenes, 4 overlay modules, 6 alerts and 3 panels. Every asset ships with a text version and a blank version for OBS text sources.",
+      "specs": ["17 assets, 34 PNGs", "Scenes 1920×1080", "Outfit font (OFL)", "Text + blank variants", "QA: alpha + text-fit checked"],
+      "note": "Waiting on your notes before the v0.2 commit.",
+      "files": "stream-kit/v0.2/",
+      "images": [
+        { "src": "thumbs/nsh-contact-sheet.webp", "label": "Contact sheet" },
+        { "src": "thumbs/nsh-starting-soon.webp", "label": "Starting soon" },
+        { "src": "thumbs/nsh-alert-raid.webp", "label": "Raid alert" }
+      ]
+    },
+    {
+      "id": "neon-shoreline-scenes",
+      "title": "Neon Shoreline Scene Backgrounds",
+      "type": "background",
+      "status": "in-review",
+      "listing": "for-sale",
+      "price": null,
+      "collection": "Neon Shoreline",
+      "thread": "Build the rest of the stream kit",
+      "updated": "2026-11-18T22:26:46Z",
+      "summary": "Starting Soon, BRB, Ending and Just Chatting scenes. Just Chatting has transparent cam (1280×720) and chat (440×760) openings.",
+      "specs": ["4 scenes", "1920×1080", "Opaque, cut-out openings on Just Chatting"],
+      "files": "stream-kit/v0.2/out/scenes/",
+      "images": [
+        { "src": "thumbs/nsh-starting-soon.webp", "label": "Starting soon" },
+        { "src": "thumbs/nsh-brb.webp", "label": "BRB" },
+        { "src": "thumbs/nsh-ending.webp", "label": "Ending" },
+        { "src": "thumbs/nsh-just-chatting.webp", "label": "Just chatting" }
+      ]
+    },
+    {
+      "id": "neon-shoreline-overlays",
+      "title": "Neon Shoreline Cam & Chat Overlays",
+      "type": "overlays",
+      "status": "in-review",
+      "listing": "for-sale",
+      "price": null,
+      "collection": "Neon Shoreline",
+      "thread": "Build the rest of the stream kit",
+      "updated": "2026-11-18T22:26:46Z",
+      "summary": "Webcam frames in 16:9 and 4:3, a chat frame and a countdown plate. All transparent, openings verified 100% clear.",
+      "specs": ["Webcam 16:9 830×540", "Webcam 4:3 670×540", "Chat 560×1000", "Countdown 740×200"],
+      "files": "stream-kit/v0.2/out/modules/",
+      "images": [
+        { "src": "thumbs/nsh-webcam-16x9.webp", "label": "Webcam 16:9" },
+        { "src": "thumbs/nsh-webcam-4x3.webp", "label": "Webcam 4:3" },
+        { "src": "thumbs/nsh-chat-frame.webp", "label": "Chat frame" },
+        { "src": "thumbs/nsh-countdown.webp", "label": "Countdown plate" }
+      ]
+    },
+    {
+      "id": "neon-shoreline-alerts",
+      "title": "Neon Shoreline Alert Set",
+      "type": "alerts",
+      "status": "in-review",
+      "listing": "for-sale",
+      "price": null,
+      "collection": "Neon Shoreline",
+      "thread": "Build the rest of the stream kit",
+      "updated": "2026-11-18T22:26:46Z",
+      "summary": "Follow, sub, resub, gift, cheer and raid alerts with {USERNAME}, {MONTHS}, {COUNT} and {AMOUNT} placeholders.",
+      "specs": ["6 alerts", "820×230", "Transparent", "Blank variants for alert-box text"],
+      "files": "stream-kit/v0.2/out/alerts/",
+      "images": [
+        { "src": "thumbs/nsh-alert-follow.webp", "label": "Follow" },
+        { "src": "thumbs/nsh-alert-sub.webp", "label": "Sub" },
+        { "src": "thumbs/nsh-alert-resub.webp", "label": "Resub" },
+        { "src": "thumbs/nsh-alert-gift.webp", "label": "Gift" },
+        { "src": "thumbs/nsh-alert-cheer.webp", "label": "Cheer" },
+        { "src": "thumbs/nsh-alert-raid.webp", "label": "Raid" }
+      ]
+    },
+    {
+      "id": "neon-shoreline-panels",
+      "title": "Neon Shoreline Twitch Panels",
+      "type": "panels",
+      "status": "in-review",
+      "listing": "for-sale",
+      "price": null,
+      "collection": "Neon Shoreline",
+      "thread": "Build the rest of the stream kit",
+      "updated": "2026-11-18T22:26:46Z",
+      "summary": "About, Schedule and Socials panel headers sized for the Twitch About section.",
+      "specs": ["3 panels", "320×120", "Transparent"],
+      "files": "stream-kit/v0.2/out/panels/",
+      "images": [
+        { "src": "thumbs/nsh-panel-about.webp", "label": "About" },
+        { "src": "thumbs/nsh-panel-schedule.webp", "label": "Schedule" },
+        { "src": "thumbs/nsh-panel-socials.webp", "label": "Socials" }
+      ]
+    },
+    {
+      "id": "neon-shoreline-animated",
+      "title": "Neon Shoreline Animated Scenes",
+      "type": "background",
+      "status": "planned",
+      "listing": "for-sale",
+      "price": null,
+      "collection": "Neon Shoreline",
+      "thread": "Animate the stream kit scenes",
+      "updated": "2026-11-18T22:15:42Z",
+      "summary": "Looping versions of Starting Soon, BRB, Ending and the webcam frame. Palms sway ±3°, water bands and bokeh drift; sun, frames and text stay still.",
+      "specs": ["11 s loops @ 30 fps", "VP9 alpha WebM", "Under 15 MB each"],
+      "note": "Motion plan is done. Build starts once the static pack is approved. Previews show the static source art.",
+      "files": "stream-kit/v0.2/motion/",
+      "images": [
+        { "src": "thumbs/nsh-starting-soon.webp", "label": "Source: Starting soon" },
+        { "src": "thumbs/nsh-brb.webp", "label": "Source: BRB" },
+        { "src": "thumbs/nsh-webcam-16x9.webp", "label": "Source: Webcam frame" }
+      ]
+    },
+    {
+      "id": "logic-and-lace-logo",
+      "title": "Logic & Lace Logo Suite",
+      "type": "logo-branding",
+      "status": "completed",
+      "listing": "own-brand",
+      "price": null,
+      "collection": "Logic & Lace",
+      "thread": "Design Logic & Lace and Hexecutable logos",
+      "updated": "2026-11-21T19:35:22Z",
+      "summary": "Lace Grimoire icon with a white </> cover, plus the LOGIC & LACE lockup with \"CRAFTED WITH CARE\".",
+      "specs": ["Icon 2048 / 112 / 56 / 28", "Lockup 3000w", "SVG masters", "Light + dark"],
+      "files": "brands/logos-final-v1/logic-and-lace/",
+      "images": [
+        { "src": "thumbs/lnl-icon-dark.webp", "label": "Icon, dark bg" },
+        { "src": "thumbs/lnl-lockup-dark.webp", "label": "Lockup, dark bg" },
+        { "src": "thumbs/lnl-icon-light.webp", "label": "Icon, light bg", "light": true },
+        { "src": "thumbs/logo-sizes.webp", "label": "Small-size check", "light": true }
+      ]
+    },
+    {
+      "id": "hexecutable-logo",
+      "title": "Hexecutable Logo Suite",
+      "type": "logo-branding",
+      "status": "completed",
+      "listing": "own-brand",
+      "price": null,
+      "collection": "Hexecutable",
+      "thread": "Design Logic & Lace and Hexecutable logos",
+      "updated": "2026-11-21T19:35:22Z",
+      "summary": "Hex Potion icon in pastel indigo, plus the HEXECUTABLE lockup with \"DEV TOOLS BY LOGIC & LACE\".",
+      "specs": ["Icon 2048 / 112 / 56 / 28", "Lockup 3000w", "SVG masters", "Light + dark"],
+      "files": "brands/logos-final-v1/hexecutable/",
+      "images": [
+        { "src": "thumbs/hex-icon-dark.webp", "label": "Icon, dark bg" },
+        { "src": "thumbs/hex-lockup-dark.webp", "label": "Lockup, dark bg" },
+        { "src": "thumbs/hex-icon-light.webp", "label": "Icon, light bg", "light": true }
+      ]
+    }
+  ]
+}
