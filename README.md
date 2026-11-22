@@ -20,7 +20,7 @@ Everything shown on the page lives in `src/data/site.ts`: work tiles, services a
 
 ## Quote form
 
-The form posts JSON to the URL in `VITE_FORM_ENDPOINT` (Web3Forms or Formspree). Copy `.env.example` to `.env` and fill it in. With no endpoint set, the form tells the visitor it isn't connected yet instead of failing silently.
+The form posts JSON to the URL in `VITE_FORM_ENDPOINT`. Formspree works with just the URL; Web3Forms also needs `VITE_FORM_ACCESS_KEY`, which is sent as `access_key`. Copy `.env.example` to `.env` and fill it in. With no endpoint set, the form tells the visitor it isn't connected yet instead of failing silently, and shows the studio email from `site.contact.email` once that is set.
 
 ## Brand assets
 

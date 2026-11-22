@@ -1,11 +1,26 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import type { WorkItem } from "../data/types";
 import { useFocusTrap } from "../hooks/useFocusTrap";
 import { PlaceholderArt } from "./PlaceholderArt";
 
-export function Lightbox({ item, onClose }: { item: WorkItem | null; onClose(): void }) {
+type Props = { item: WorkItem | null; trigger?: HTMLElement | null; onClose(): void };
+
+export function Lightbox({ item, trigger, onClose }: Props) {
   const panel = useRef<HTMLDivElement>(null);
-  useFocusTrap(panel, item !== null);
+  const movedFocus = useRef(false);
+  const skipRestore = useCallback(() => movedFocus.current, []);
+  useFocusTrap(panel, item !== null, { returnTo: trigger, skipRestore });
+
+  useEffect(() => {
+    if (item) movedFocus.current = false;
+  }, [item]);
+
+  function commission() {
+    movedFocus.current = true;
+    onClose();
+    const field = document.querySelector<HTMLElement>("#quote input[name=name]");
+    field?.focus({ preventScroll: true });
+  }
 
   useEffect(() => {
     if (!item) return;
@@ -40,7 +55,7 @@ export function Lightbox({ item, onClose }: { item: WorkItem | null; onClose(): 
           <p>{item.blurb}</p>
           <p className="specs">{item.specs}</p>
           <div className="lightbox-actions">
-            <a className="btn btn-primary" href="#quote" onClick={onClose}>
+            <a className="btn btn-primary" href="#quote" onClick={commission}>
               Commission something like this
             </a>
             {item.link && (

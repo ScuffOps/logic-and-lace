@@ -54,7 +54,7 @@ export function QuoteForm() {
     setStatus("");
     if (Object.keys(next).length > 0) return;
     setSending(true);
-    const result = await submitQuote(payload, import.meta.env.VITE_FORM_ENDPOINT);
+    const result = await submitQuote(payload, import.meta.env.VITE_FORM_ENDPOINT, fetch, import.meta.env.VITE_FORM_ACCESS_KEY);
     setSending(false);
     setStatus(statusText(result));
     if (result.ok) {
@@ -133,6 +133,12 @@ export function QuoteForm() {
         </div>
         <p className={status ? "ok full show" : "ok full"} role="status">
           {status}
+          {status && status !== COPY.success && site.contact?.email && (
+            <>
+              {" "}
+              <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+            </>
+          )}
         </p>
       </form>
     </>

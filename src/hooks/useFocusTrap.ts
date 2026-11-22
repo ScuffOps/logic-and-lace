@@ -3,7 +3,15 @@ import { useEffect, type RefObject } from "react";
 const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
 
 /** Keeps Tab inside `ref` while active and restores focus to the previously focused element on deactivate. */
-export function useFocusTrap(ref: RefObject<HTMLElement | null>, active: boolean) {
+export type FocusTrapOptions = {
+  /** Element to focus on deactivate; falls back to whatever was focused on activate. */
+  returnTo?: HTMLElement | null;
+  /** When it returns true at deactivate time, focus is not restored (caller moved it). */
+  skipRestore?: () => boolean;
+};
+
+export function useFocusTrap(ref: RefObject<HTMLElement | null>, active: boolean, options: FocusTrapOptions = {}) {
+  const { returnTo, skipRestore } = options;
   useEffect(() => {
     if (!active) return;
     const root = ref.current;
@@ -29,7 +37,8 @@ export function useFocusTrap(ref: RefObject<HTMLElement | null>, active: boolean
     document.addEventListener("keydown", onKey);
     return () => {
       document.removeEventListener("keydown", onKey);
-      previous?.focus();
+      if (skipRestore?.()) return;
+      (returnTo ?? previous)?.focus();
     };
-  }, [ref, active]);
+  }, [ref, active, returnTo, skipRestore]);
 }

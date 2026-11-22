@@ -45,7 +45,7 @@ export default function App() {
           <Footer />
         </main>
       </div>
-      <Lightbox item={open?.item ?? null} onClose={close} />
+      <Lightbox item={open?.item ?? null} trigger={open?.trigger} onClose={close} />
     </>
   );
 }

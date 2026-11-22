@@ -15,6 +15,7 @@ export async function submitQuote(
   payload: QuotePayload,
   endpoint: string | undefined,
   fetchImpl: typeof fetch = fetch,
+  accessKey?: string,
 ): Promise<SubmitResult> {
   if (payload.website.trim() !== "") return { ok: true };
   if (!endpoint) return { ok: false, reason: "not-configured" };
@@ -22,7 +23,15 @@ export async function submitQuote(
     const res = await fetchImpl(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ ...payload, needs: payload.needs.join(", ") }),
+      body: JSON.stringify({
+        ...(accessKey ? { access_key: accessKey } : {}),
+        name: payload.name,
+        contact: payload.contact,
+        needs: payload.needs.join(", "),
+        budget: payload.budget,
+        deadline: payload.deadline,
+        message: payload.message,
+      }),
     });
     return res.ok ? { ok: true } : { ok: false, reason: "rejected" };
   } catch {

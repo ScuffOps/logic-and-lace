@@ -37,4 +37,6 @@ export type Site = {
   hex: { copy: string; cta: ExternalLink };
   about: { paragraphs: string[]; facts: { label: string; value: string }[] };
   form: { needs: string[]; budgets: string[] };
+  /** Studio contact shown when the form cannot send. Undefined until Veri supplies it. */
+  contact?: { email?: string };
 };
